@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "42logtime",
 	"description": "42logtime",
-	"version": "0.5",
+	"version": "0.6",
 	"icons": {
 		"16": "src/png/logo_16.png",
 		"48": "src/png/logo_48.png",

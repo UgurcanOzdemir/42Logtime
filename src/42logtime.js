@@ -13,14 +13,15 @@ function getData () {
   }
   currentTry += 1
   const svgElement = document.getElementById('user-locations')
-  var url = ''
-  if (document.URL == 'https://profile.intra.42.fr/') {
-    url = svgElement.getAttribute('data-url')
-  } else {
-    url = 'https://profile.intra.42.fr/' + svgElement.getAttribute('data-url')
+  var dataUrl = svgElement.getAttribute('data-url')
+  const schoolUrl = 'https://profile.intra.42.fr/'
+  if (dataUrl.indexOf(schoolUrl) == -1) {
+    dataUrl =
+      'https://profile.intra.42.fr/' + svgElement.getAttribute('data-url')
   }
-  load(url, function (err, data) {
+  load(dataUrl, function (err, data) {
     if (err !== null) {
+      getData()
     } else {
       parseData(data)
     }
